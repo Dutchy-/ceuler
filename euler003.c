@@ -14,17 +14,19 @@ int main( int argc, char *argv[])
 //	p = 0;
 //	prime_factor(44, &p, primes);
 //	p = 0;
-	prime_factor(1000000, &p, primes);
-	for ( int i = 0; i < p; i++) 
-		printf("%d\n", primes[i]);
+//	prime_factor(1234509, &p, primes);
+	prime_factor(600851475143L, &p, primes);
+	int max = 0;
+	for ( int i = 0; i < p; i++)
+		if(primes[i] > max) max = primes[i];
+	printf("Answer: %d\n", max);
 }
 
 void prime_factor(long n, int *p, int *primes)
 {
-	int a;
-	int b;
+	long a;
+	long b;
 	factor(n, &a, &b);
-	printf("%d %d\n", a, b);
 	if ( a == 1 && b != 1 )
 	{
 		primes[(*p)++] = b;
@@ -41,7 +43,7 @@ void prime_factor(long n, int *p, int *primes)
 	
 }
 
-void factor(long n, int *factor1, int *factor2)
+void factor(long n, long *factor1, long *factor2)
 {
 	double a = ceil(sqrt(n));
 	double b2 = a*a - n;
@@ -67,7 +69,7 @@ void factor(long n, int *factor1, int *factor2)
 	}
 }
 
-int is_square(int x)
+int is_square(long x)
 {
-	return ( sqrt(x) == (int)sqrt(x) );
+	return ( sqrt(x) == (long)sqrt(x) );
 }
