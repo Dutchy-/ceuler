@@ -22,6 +22,6 @@ int main( int argc, char *argv[])
 		one = two;
 		two = one + tmp;
 	}
-	printf("Answer: %lu\n", sum);
+	printf("Answer: %u\n", sum);
 	return 0;
 }
