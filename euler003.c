@@ -6,8 +6,8 @@
 
 int main( int argc, char *argv[])
 {
-	if(argc == 1)
-	{
+#ifndef FACTOR
+	if ( argc == 1 ) {
 		printf("The prime factors of 13195 are 5, 7, 13 and 29.\n");
 		printf("What is the largest prime factor of the number 600851475143 ?\n");
 		int primes[100];
@@ -18,8 +18,9 @@ int main( int argc, char *argv[])
 			if(primes[i] > max) max = primes[i];
 		printf("Answer: %d\n", max);
 	}
-	else 
-	{
+#endif
+#ifdef FACTOR
+	if( argc == 2 ) {
 		unsigned long factor = atol(argv[1]);
 		int primes[100];
 		int p = 0;
@@ -30,6 +31,7 @@ int main( int argc, char *argv[])
 			printf(" %d", primes[i]);
 		printf("\n");
 	}
+#endif
 }
 
 void bubblesort(int *array, int p)
