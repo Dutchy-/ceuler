@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #include "euler003.h"
 #include "algebra.h"
 
