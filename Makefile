@@ -1,4 +1,7 @@
-CFLAGS=-Wall -g -std=c11 -lm
+CC=gcc
+CFLAGS=-Wall -g -std=c11
+
+LDFLAGS=-lm
 
 all: euler001 euler002 euler003
 
